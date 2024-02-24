@@ -16,6 +16,7 @@ const darkMode = () => {
     image1.src = "img/undraw_proud_coder_dark.svg";
     image2.src = "img/undraw_feeling_proud_dark.svg";
     image3.src = "img/undraw_conceptual_idea_dark.svg";
+    localStorage.setItem('theme', 'dark');
 }
 
 const lightMode = () => {
@@ -30,6 +31,7 @@ const lightMode = () => {
     image1.src = "img/undraw_proud_coder_light.svg";
     image2.src = "img/undraw_feeling_proud_light.svg";
     image3.src = "img/undraw_conceptual_idea_light.svg";
+    localStorage.setItem('theme', 'light');
 }
 
 toggleSwitch.addEventListener('change', (event) => {
@@ -39,3 +41,12 @@ toggleSwitch.addEventListener('change', (event) => {
         lightMode();
     }
 })
+
+let currentTheme = localStorage.getItem('theme');
+if(currentTheme) {
+    localStorage.setItem('theme', currentTheme);
+    if(currentTheme === "dark") {
+        toggleSwitch.setAttribute('checked', true);
+        darkMode();
+    }
+}
