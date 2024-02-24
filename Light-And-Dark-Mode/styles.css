@@ -34,13 +34,14 @@ body {
     font-family: Comfortaa, Oswald, sans-serif;
     font-size: 1.25rem;
     color: var(--on-background);
-    background-color: #fdfcfe;
+    background-color:var(--on-primary);
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%2349bdc9' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E");
+    transition: background .4s ease-out;
 }
 
 .header {
     width: 100vw;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(255 255 255 / 50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,7 +66,7 @@ body {
 
 .nav div > a:hover {
     text-decoration: underline;
-    color: var(--secondary-color)
+    color: var(--on-background)
 }
 
 .toggle {
@@ -186,7 +187,6 @@ button:disabled {
 
 .secondary {
     border: 2px solid var(--secondary-color);
-    background: var(--secondary-color);
 }
 
 .secondary, .secondary:hover, .outline.secondary:hover {
@@ -225,4 +225,8 @@ button:disabled {
     margin-right: 50px;
     cursor: pointer;
     color: var(--primary-color);
+}
+
+.fab:hover {
+    color: var(--on-background);
 }
